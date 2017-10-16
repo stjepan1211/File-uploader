@@ -1,0 +1,13 @@
+P:\FileUploader\FileUploader.Repository.Common\bin\Release\FileUploader.Repository.Common.dll
+P:\FileUploader\FileUploader.Repository.Common\bin\Release\FileUploader.Repository.Common.pdb
+P:\FileUploader\FileUploader.Repository.Common\bin\Release\FileUploader.EF.dll
+P:\FileUploader\FileUploader.Repository.Common\bin\Release\EntityFramework.dll
+P:\FileUploader\FileUploader.Repository.Common\bin\Release\FileUploader.EF.Common.dll
+P:\FileUploader\FileUploader.Repository.Common\bin\Release\FileUploader.EF.pdb
+P:\FileUploader\FileUploader.Repository.Common\bin\Release\FileUploader.EF.dll.config
+P:\FileUploader\FileUploader.Repository.Common\bin\Release\EntityFramework.xml
+P:\FileUploader\FileUploader.Repository.Common\bin\Release\FileUploader.EF.Common.pdb
+P:\FileUploader\FileUploader.Repository.Common\bin\Release\FileUploader.EF.Common.dll.config
+P:\FileUploader\FileUploader.Repository.Common\obj\Release\FileUploader.Repository.Common.csprojResolveAssemblyReference.cache
+P:\FileUploader\FileUploader.Repository.Common\obj\Release\FileUploader.Repository.Common.dll
+P:\FileUploader\FileUploader.Repository.Common\obj\Release\FileUploader.Repository.Common.pdb

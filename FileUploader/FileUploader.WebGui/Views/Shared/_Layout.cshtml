@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File uploader</title>
+
+    
+    @* scripts *@
+    
+    <script src="/node_modules/core-js/client/shim.min.js"></script>
+    <script src="/node_modules/zone.js/dist/zone.js"></script>
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="/systemjs.config.js"></script>
+    <script src="/node_modules/moment/moment.js"></script>
+    <script src="/node_modules/reflect-metadata/Reflect.js"></script>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script> 
+
+    <script>
+        System.import('/app/main.js').catch(function (err) { console.error(err); });
+    </script>
+
+    @* css *@
+    <link rel="stylesheet" type="text/css" href="/Content/style.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/themes/omega/theme.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/primeng.min.css" />
+
+    <script>
+        window.GlobalVariables = {
+            FileUploaderWebAPI: '@System.Configuration.ConfigurationManager.AppSettings["APIURL"]',
+            @*InitialLanguage: '@System.Configuration.ConfigurationManager.AppSettings["InitialLanguage"]',
+            SelectedLanguage: '@System.Configuration.ConfigurationManager.AppSettings["InitialLanguage"]',*@
+        }
+    </script>
+
+
+    @* date pipe support for safari *@
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en"></script>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @RenderSection("scripts", required: false)
+    <script src="build.js"></script>
+</body>
+</html>

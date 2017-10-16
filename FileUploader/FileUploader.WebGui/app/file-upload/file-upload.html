@@ -1,0 +1,30 @@
+﻿<div>
+    <input type="file" id="files" style="display:none" #fileInput (change)="fileChangeEvent($event)" placeholder="Upload file..." [multiple]="multiple" />
+    <label for="files" class="btn-animate green">Add file</label>
+    <button type="button" class="btn-animate red" (click)="resetFilesForUpload()">Reset files for upload</button>
+</div>
+
+<div class="table-content">
+    <p-dataTable [value]="filesToUpload" [resizableColumns]="true">
+        <p-column field="name" header="Name" [style]="{'width':'52%'}"></p-column>
+        <p-column field="lastModified" header="LastModified" [style]="{'width':'20%'}">
+            <ng-template let-col let-row="rowData" pTemplate="body">
+                <span>{{row[col.field] | customDate}}</span>
+            </ng-template>
+        </p-column>
+        <p-column field="size" header="Size" [style]="{'width':'20%'}">
+            <ng-template let-col let-row="rowData" pTemplate="body">
+                <span>{{row[col.field] | fileSize}}</span>
+            </ng-template>
+        </p-column>
+        <p-column header="Remove" [sortable]="false" [style]="{'width':'8%', 'text-align':'center'}">
+            <ng-template let-col let-row="rowData" let-i="rowIndex" pTemplate="body">
+                <span class="fa fa-times red" data-toggle="tooltip" (click)="removeFile(i)" data-placement="right" title="Remove file">
+                </span>
+            </ng-template>
+        </p-column>
+    </p-dataTable>
+</div>
+<div>
+    <button type="button" class="btn-animate blue btn-right" (click)="upload()">Upload</button>
+</div>

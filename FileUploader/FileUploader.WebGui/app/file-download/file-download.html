@@ -1,0 +1,12 @@
+﻿<p-dataTable [value]="allFiles" [resizableColumns]="true">
+    <p-column field="OriginalName" header="Name" [style]="{'width':'40%'}"></p-column>
+    <p-column field="Extension" header="Extension" [style]="{'width':'10%'}">
+    </p-column>
+    <p-column field="Description" header="Description" [style]="{'width':'40%'}">
+    </p-column>
+    <p-column header="Download" [style]="{'width':'10%', 'text-align': 'center'}">
+        <ng-template let-col let-row="rowData" let-i="rowIndex" pTemplate="body">
+             <a title="Download file" class="fa fa-download" href="http://localhost:5736/FileUploader.WebApi/download/{{row.FileId}}"></a>
+        </ng-template>
+    </p-column>
+</p-dataTable>

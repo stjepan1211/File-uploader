@@ -1,0 +1,113 @@
+﻿li.nav-item {
+  background-color: rgba(0, 0, 255, 0.9);
+  color: #ffffff;
+  font-size: 25px;
+  box-sizing: border-box;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+li a {
+  color: white !important;
+}
+div.tab-content {
+  box-sizing: border-box;
+  padding: 30px 30px 30px 30px;
+  background-color: rgba(209, 209, 224, 0.2);
+}
+div.table-content {
+  box-sizing: border-box;
+  margin: 30px 5px 5px 5px;
+}
+.btn-animate {
+  font-weight: bold;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px #999;
+}
+.btn-animate:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.btn-animate.green {
+  background-color: #006633;
+}
+.btn-animate.green:hover {
+  background-color: #00cc66;
+}
+.btn-animate.green:active {
+  background-color: #00cc66;
+}
+.btn-animate.red {
+  background-color: #800000;
+}
+.btn-animate.red:hover {
+  background-color: #b30000;
+}
+.btn-animate.red:active {
+  background-color: #b30000;
+}
+.btn-animate.blue {
+  background-color: rgba(0, 0, 255, 0.9);
+}
+.btn-animate.blue:hover {
+  background-color: #3333ff;
+}
+.btn-animate.blue:active {
+  background-color: #3333ff;
+}
+.btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+div.ui-datalist-header.ui-widget-header.ui-corner-top {
+  font-size: 25px;
+}
+div.ui-inline {
+  display: inline-block;
+}
+div.half-parent {
+  width: 50%;
+  box-sizing: border-box;
+}
+div.quarter-parent {
+  width: 20%;
+  box-sizing: border-box;
+}
+div.list-counter {
+  width: 4%;
+  box-sizing: border-box;
+}
+div.list-header {
+  font-size: 18px;
+  text-align: center;
+  vertical-align: text-top;
+  margin-bottom: 10px;
+}
+hr {
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+i.fa.fa-times.red {
+  color: #800000;
+}
+span.fa.fa-times.red:hover {
+  background-color: #b30000;
+}
+.ui-datatable th.ui-state-default {
+  background: rgba(0, 0, 255, 0.9) !important;
+}
+span.ui-column-title {
+  color: white;
+}
+.btn-right {
+  position: relative;
+  left: 950px;
+  margin-top: 30px;
+}

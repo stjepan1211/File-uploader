@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FileUploader.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:FileUploader.WebApi.Controllers.FileController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FileUploader.WebApi.Controllers.FileController.#ctor(FileUploader.Repository.Common.IRepositories.IFileRepository,FileUploader.EF.Context.FUDbContext,FileUploader.Common.IProcessing.IDoProcess)">
+            <summary>
+            
+            </summary>
+            <param name="fileRepository"></param>
+            <param name="db"></param>
+            <param name="tenantProcess"></param>
+        </member>
+        <member name="M:FileUploader.WebApi.Controllers.FileController.GetAll(FileUploader.WebApi.Models.PaginationModel)">
+            <summary>
+            Get all files
+            </summary>
+            <remarks>
+            Get a list of all files
+            </remarks>   
+        </member>
+        <member name="M:FileUploader.WebApi.Controllers.FileController.Post">
+            <summary>
+            Post files
+            </summary>
+            <remarks>
+            Used to upload file to db
+            </remarks>
+        </member>
+        <member name="M:FileUploader.WebApi.Controllers.FileController.GetOne(System.Guid)">
+            <summary>
+            Get file
+            </summary>
+            <remarks>
+            Get specific file by id
+            </remarks>
+        </member>
+        <member name="M:FileUploader.WebApi.Controllers.FileController.GetForDownload(System.Guid)">
+            <summary>
+            Download file
+            </summary>
+            <remarks>
+            Get file for download
+            </remarks>
+        </member>
+        <member name="T:FileUploader.WebApi.Models.FileDownloadModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:FileUploader.WebApi.Models.PaginationModel">
+            <summary>
+            PaginationModel
+            </summary>
+        </member>
+        <member name="P:FileUploader.WebApi.Models.PaginationModel.PageNumber">
+            <summary>
+            Page number to retrieve data for
+            </summary>
+        </member>
+        <member name="P:FileUploader.WebApi.Models.PaginationModel.PageSize">
+            <summary>
+            Page size/Max elements per page
+            </summary>
+        </member>
+        <member name="P:FileUploader.WebApi.Models.PaginationModel.SortField">
+            <summary>
+            Order field
+            </summary>
+        </member>
+        <member name="P:FileUploader.WebApi.Models.PaginationModel.SortDirection">
+            <summary>
+            Order direction
+            </summary>
+        </member>
+        <member name="P:FileUploader.WebApi.Models.PaginationModel.OrderBy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FileUploader.WebApi.Models.PaginationModel.ToString">
+            <summary>
+            Returns the String representation of the object properties.
+            </summary>
+        </member>
+    </members>
+</doc>

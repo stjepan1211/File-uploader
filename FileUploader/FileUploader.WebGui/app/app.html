@@ -1,0 +1,15 @@
+﻿<ngb-tabset [justify]="currentJustify">
+    <ngb-tab title="Upload documents">
+        <ng-template ngbTabContent>
+            <file-uploader [multiple]="true"></file-uploader>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Download documents">
+        <ng-template ngbTabContent>
+            <file-download></file-download>
+        </ng-template>
+    </ngb-tab>
+</ngb-tabset>
+
+<p-growl></p-growl>
+<clock-component></clock-component>

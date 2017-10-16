@@ -1,0 +1,152 @@
+﻿@colorprimary: rgba(0, 0, 255, 0.9);
+@fontsizetab: 25px;
+@paddingcontent: 30px;
+@tabcontentbackground: rgba(209, 209, 224, 0.2);
+@fontsizebtn: 18px;
+
+@btngreenprimary: rgb(0, 102, 51);
+@btngreensecondary: rgb(0, 204, 102);
+
+@btnbluesecondary: rgb(51, 51, 255);
+
+@btnredprimary: rgb(128, 0, 0);
+@btnredsecondary: rgb(179, 0, 0);
+
+li.nav-item {
+    background-color: @colorprimary;
+    color: #ffffff;
+    font-size: @fontsizetab;
+    box-sizing: border-box;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+li {
+    a {
+        color: white !important;
+    }
+}
+
+div.tab-content {
+    box-sizing: border-box;
+    padding: @paddingcontent @paddingcontent @paddingcontent @paddingcontent;
+    background-color: @tabcontentbackground;
+}
+
+div.table-content {
+    box-sizing: border-box;
+    margin: 30px 5px 5px 5px;
+}
+
+.btn-animate {
+    font-weight: bold;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: @fontsizebtn;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px #999;
+}
+
+.btn-animate:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.btn-animate.green {
+    background-color: @btngreenprimary;
+}
+
+.btn-animate.green:hover {
+    background-color: @btngreensecondary;
+}
+
+.btn-animate.green:active {
+    background-color: @btngreensecondary;
+}
+
+.btn-animate.red {
+    background-color: @btnredprimary;
+}
+
+.btn-animate.red:hover {
+    background-color: @btnredsecondary;
+}
+
+.btn-animate.red:active {
+    background-color: @btnredsecondary;
+}
+
+.btn-animate.blue {
+    background-color: @colorprimary;
+}
+
+.btn-animate.blue:hover {
+    background-color: @btnbluesecondary;
+}
+
+.btn-animate.blue:active {
+    background-color: @btnbluesecondary;
+}
+
+.btn-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+div.ui-datalist-header.ui-widget-header.ui-corner-top {
+    font-size: @fontsizetab;
+}
+
+div.ui-inline {
+    display: inline-block;
+}
+div.half-parent {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+div.quarter-parent {
+    width: 20%;
+    box-sizing: border-box;
+}
+
+div.list-counter {
+    width: 4%;
+    box-sizing: border-box;
+}
+
+div.list-header {
+    font-size: @fontsizebtn;
+    text-align: center;
+    vertical-align: text-top;
+    margin-bottom: 10px;
+}
+
+hr {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
+
+i.fa.fa-times.red {
+    color: @btnredprimary;
+}
+
+span.fa.fa-times.red:hover {
+    background-color: @btnredsecondary;
+}
+
+.ui-datatable th.ui-state-default {
+    background: @colorprimary !important;
+}
+span.ui-column-title {
+    color: white;
+}
+.btn-right {
+    position: relative;
+    left: 950px;
+    margin-top: @paddingcontent;
+}

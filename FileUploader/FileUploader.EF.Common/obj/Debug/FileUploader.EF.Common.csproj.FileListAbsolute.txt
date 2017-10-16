@@ -1,0 +1,9 @@
+P:\FileUploader\FileUploader.EF.Common\bin\Debug\FileUploader.EF.Common.dll.config
+P:\FileUploader\FileUploader.EF.Common\bin\Debug\FileUploader.EF.Common.dll
+P:\FileUploader\FileUploader.EF.Common\bin\Debug\FileUploader.EF.Common.pdb
+P:\FileUploader\FileUploader.EF.Common\bin\Debug\EntityFramework.dll
+P:\FileUploader\FileUploader.EF.Common\bin\Debug\EntityFramework.SqlServer.dll
+P:\FileUploader\FileUploader.EF.Common\bin\Debug\EntityFramework.xml
+P:\FileUploader\FileUploader.EF.Common\bin\Debug\EntityFramework.SqlServer.xml
+P:\FileUploader\FileUploader.EF.Common\obj\Debug\FileUploader.EF.Common.dll
+P:\FileUploader\FileUploader.EF.Common\obj\Debug\FileUploader.EF.Common.pdb

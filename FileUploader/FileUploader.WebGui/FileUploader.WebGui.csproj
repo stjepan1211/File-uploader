@@ -1,0 +1,868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5CB5068D-C8C6-4A89-AB00-8035A24D39EE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FileUploader.WebGui</RootNamespace>
+    <AssemblyName>FileUploader.WebGui</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\app.html" />
+    <Content Include="app\file-download\file-download.html" />
+    <Content Include="app\file-upload\file-upload.html" />
+    <Content Include="app\test\test.html" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\style.css">
+      <DependentUpon>style.less</DependentUpon>
+    </Content>
+    <Content Include="Content\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="karma.conf.js" />
+    <Content Include="protractor.config.js" />
+    <Content Include="rollup-config.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="package.json" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\style.less" />
+    <Content Include="aot\app\app.component.ngsummary.json" />
+    <Content Include="aot\app\app.module.ngsummary.json" />
+    <Content Include="aot\app\file-download\file-download.component.ngsummary.json" />
+    <Content Include="aot\app\file-download\file-download.service.ngsummary.json" />
+    <Content Include="aot\app\file-model\file-model.ngsummary.json" />
+    <Content Include="aot\app\file-upload\file-upload.component.ngsummary.json" />
+    <Content Include="aot\app\file-upload\file-upload.service.ngsummary.json" />
+    <Content Include="aot\app\message\message.service.ngsummary.json" />
+    <Content Include="aot\app\pipes\datex.pipe.ngsummary.json" />
+    <Content Include="aot\app\pipes\file-size.pipe.ngsummary.json" />
+    <Content Include="aot\app\signalR\get-clock-time.ngsummary.json" />
+    <Content Include="aot\app\signalR\signalR.service.ngsummary.json" />
+    <Content Include="aot\app\test\test.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\animations.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\index.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\public_api.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\src\browser.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\src\dsl\animation.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\src\dsl\animation_timeline_instruction.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\src\dsl\element_instruction_map.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\src\dsl\style_normalization\animation_style_normalizer.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\src\dsl\style_normalization\web_animations_style_normalizer.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\src\private_export.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\src\render\animation_driver.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\src\render\animation_engine_instruction.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\src\render\animation_engine_next.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\src\render\web_animations\dom_animation.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\src\render\web_animations\web_animations_driver.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\animations\browser\src\render\web_animations\web_animations_player.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\common\common.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\compiler.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\aot\compiler.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\aot\compiler_factory.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\aot\compiler_host.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\aot\compiler_options.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\aot\generated_file.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\aot\static_reflector.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\aot\static_symbol.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\aot\static_symbol_resolver.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\aot\summary_resolver.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\ast_path.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\compiler.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\compile_metadata.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\compile_reflector.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\directive_normalizer.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\directive_resolver.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\expression_parser\ast.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\expression_parser\lexer.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\expression_parser\parser.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\i18n\extractor.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\i18n\i18n_ast.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\i18n\i18n_html_parser.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\i18n\index.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\i18n\message_bundle.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\i18n\serializers\serializer.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\i18n\serializers\xliff.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\i18n\serializers\xliff2.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\i18n\serializers\xmb.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\i18n\serializers\xtb.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\jit\compiler.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\jit\compiler_factory.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\jit\jit_reflector.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\lifecycle_reflector.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\metadata_resolver.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\ml_parser\ast.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\ml_parser\html_parser.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\ml_parser\html_tags.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\ml_parser\interpolation_config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\ml_parser\parser.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\ml_parser\tags.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\ng_module_compiler.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\ng_module_resolver.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\output\abstract_emitter.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\output\output_ast.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\output\source_map.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\output\ts_emitter.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\parse_util.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\pipe_resolver.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\resource_loader.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\schema\dom_element_schema_registry.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\schema\element_schema_registry.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\selector.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\style_compiler.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\summary_resolver.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\template_parser\template_ast.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\template_parser\template_parser.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\url_resolver.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\util.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\version.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\compiler\src\view_compiler\view_compiler.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\core\core.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\forms\forms.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\http\http.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser-dynamic\platform-browser-dynamic.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser-dynamic\src\platform-browser-dynamic.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser-dynamic\src\platform_providers.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser-dynamic\src\private_export.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser-dynamic\src\resource_loader\resource_loader_impl.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser-dynamic\src\version.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser\animations.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser\animations\index.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser\animations\public_api.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser\animations\src\animations.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser\animations\src\animation_builder.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser\animations\src\animation_renderer.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser\animations\src\module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser\animations\src\private_export.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser\animations\src\providers.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\platform-browser\platform-browser.ngsummary.json" />
+    <Content Include="aot\node_modules\%40angular\router\router.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\accordion\accordion-config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\accordion\accordion.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\accordion\accordion.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\alert\alert-config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\alert\alert.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\alert\alert.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\buttons\buttons.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\buttons\checkbox.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\buttons\label.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\buttons\radio.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\carousel\carousel-config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\carousel\carousel.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\carousel\carousel.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\collapse\collapse.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\collapse\collapse.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-day-template-context.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-day-view.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-i18n.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-input.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-keymap-service.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-month-view.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-navigation-select.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-navigation.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-service.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-view-model.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\hijri\ngb-calendar-hijri.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\hijri\ngb-calendar-islamic-civil.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\ngb-calendar.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\ngb-date-parser-formatter.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\ngb-date-struct.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\ngb-date.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\dropdown\dropdown-config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\dropdown\dropdown.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\dropdown\dropdown.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\index.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\modal\modal-backdrop.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\modal\modal-dismiss-reasons.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\modal\modal-ref.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\modal\modal-stack.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\modal\modal-window.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\modal\modal.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\modal\modal.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\pagination\pagination-config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\pagination\pagination.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\pagination\pagination.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\popover\popover-config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\popover\popover.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\popover\popover.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\progressbar\progressbar-config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\progressbar\progressbar.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\progressbar\progressbar.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\rating\rating-config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\rating\rating.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\rating\rating.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\tabset\tabset-config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\tabset\tabset.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\tabset\tabset.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\timepicker\ngb-time-struct.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\timepicker\ngb-time.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\timepicker\timepicker-config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\timepicker\timepicker.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\timepicker\timepicker.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\tooltip\tooltip-config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\tooltip\tooltip.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\tooltip\tooltip.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\typeahead\highlight.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\typeahead\typeahead-config.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\typeahead\typeahead-window.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\typeahead\typeahead.module.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\typeahead\typeahead.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\util\popup.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\util\positioning.ngsummary.json" />
+    <Content Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\util\util.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\accordion\accordion.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\autocomplete\autocomplete.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\blockui\blockui.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\breadcrumb\breadcrumb.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\button\button.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\calendar\calendar.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\captcha\captcha.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\carousel\carousel.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\chart\chart.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\checkbox\checkbox.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\chips\chips.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\codehighlighter\codehighlighter.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\colorpicker\colorpicker.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\api.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\blockableui.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\confirmation.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\confirmationservice.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\filtermetadata.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\lazyloadevent.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\menuitem.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\message.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\messageservice.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\selectitem.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\shared.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\sortmeta.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\treedragdropservice.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\treenode.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\common\treenodedragevent.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\confirmdialog\confirmdialog.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\contextmenu\contextmenu.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\datagrid\datagrid.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\datalist\datalist.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\datascroller\datascroller.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\datatable\datatable.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\defer\defer.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\dialog\dialog.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\dom\domhandler.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\dragdrop\dragdrop.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\dropdown\dropdown.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\editor\editor.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\fieldset\fieldset.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\fileupload\fileupload.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\galleria\galleria.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\gmap\gmap.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\growl\growl.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\inplace\inplace.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\inputmask\inputmask.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\inputswitch\inputswitch.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\inputtextarea\inputtextarea.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\inputtext\inputtext.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\lightbox\lightbox.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\listbox\listbox.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\megamenu\megamenu.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\menubar\menubar.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\menu\menu.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\messages\messages.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\multiselect\multiselect.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\orderlist\orderlist.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\organizationchart\organizationchart.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\overlaypanel\overlaypanel.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\paginator\paginator.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\panelmenu\panelmenu.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\panel\panel.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\password\password.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\picklist\picklist.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\progressbar\progressbar.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\radiobutton\radiobutton.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\rating\rating.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\schedule\schedule.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\selectbutton\selectbutton.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\slidemenu\slidemenu.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\slider\slider.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\spinner\spinner.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\splitbutton\splitbutton.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\steps\steps.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\tabmenu\tabmenu.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\tabview\tabview.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\terminal\terminal.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\terminal\terminalservice.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\tieredmenu\tieredmenu.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\togglebutton\togglebutton.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\toolbar\toolbar.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\tooltip\tooltip.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\treetable\treetable.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\tree\tree.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\tristatecheckbox\tristatecheckbox.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\components\utils\objectutils.ngsummary.json" />
+    <Content Include="aot\node_modules\primeng\primeng.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\AsyncSubject.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\BehaviorSubject.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\InnerSubscriber.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\Notification.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\Observable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\ArrayObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\BoundCallbackObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\BoundNodeCallbackObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\combineLatest.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\ConnectableObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\DeferObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\dom\AjaxObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\dom\WebSocketSubject.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\EmptyObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\ErrorObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\ForkJoinObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\FromEventObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\FromEventPatternObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\FromObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\GenerateObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\IfObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\IntervalObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\NeverObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\PairsObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\PromiseObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\RangeObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\TimerObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\observable\UsingObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\Observer.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\Operator.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\audit.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\auditTime.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\buffer.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\bufferCount.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\bufferTime.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\bufferToggle.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\bufferWhen.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\catch.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\combineAll.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\combineLatest.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\concat.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\concatAll.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\concatMap.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\concatMapTo.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\count.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\debounce.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\debounceTime.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\defaultIfEmpty.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\delay.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\delayWhen.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\dematerialize.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\distinct.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\distinctUntilChanged.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\distinctUntilKeyChanged.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\do.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\elementAt.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\every.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\exhaust.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\exhaustMap.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\expand.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\filter.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\finally.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\find.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\findIndex.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\first.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\groupBy.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\ignoreElements.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\isEmpty.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\last.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\let.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\map.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\mapTo.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\materialize.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\max.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\merge.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\mergeAll.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\mergeMap.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\mergeMapTo.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\mergeScan.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\min.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\multicast.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\observeOn.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\onErrorResumeNext.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\pairwise.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\partition.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\pluck.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\publish.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\publishBehavior.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\publishLast.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\publishReplay.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\race.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\reduce.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\repeat.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\repeatWhen.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\retry.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\retryWhen.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\sample.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\sampleTime.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\scan.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\sequenceEqual.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\share.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\shareReplay.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\single.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\skip.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\skipLast.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\skipUntil.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\skipWhile.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\startWith.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\subscribeOn.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\switch.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\switchMap.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\switchMapTo.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\take.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\takeLast.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\takeUntil.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\takeWhile.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\throttle.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\throttleTime.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\timeInterval.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\timeout.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\timeoutWith.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\timestamp.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\toArray.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\toPromise.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\window.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\windowCount.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\windowTime.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\windowToggle.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\windowWhen.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\withLatestFrom.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\zip.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\operator\zipAll.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\OuterSubscriber.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\ReplaySubject.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\Rx.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\Scheduler.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\scheduler\Action.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\scheduler\AnimationFrameScheduler.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\scheduler\AsapScheduler.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\scheduler\AsyncAction.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\scheduler\AsyncScheduler.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\scheduler\QueueScheduler.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\scheduler\VirtualTimeScheduler.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\Subject.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\Subscriber.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\Subscription.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\testing\ColdObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\testing\HotObservable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\testing\SubscriptionLog.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\testing\SubscriptionLoggable.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\testing\TestMessage.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\testing\TestScheduler.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\util\ArgumentOutOfRangeError.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\util\EmptyError.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\util\ObjectUnsubscribedError.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\util\TimeoutError.ngsummary.json" />
+    <Content Include="aot\node_modules\rxjs\util\UnsubscriptionError.ngsummary.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="systemjs-angular-loader.js" />
+    <Content Include="systemjs.config.extras.js" />
+    <Content Include="systemjs.config.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tsconfig-aot.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="aot\app\app.component.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\app\app.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\app\file-download\file-download.component.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\app\file-upload\file-upload.component.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\app\test\test.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40angular\common\common.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40angular\core\core.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40angular\forms\forms.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40angular\http\http.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40angular\platform-browser\animations\index.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40angular\platform-browser\platform-browser.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40angular\router\router.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\accordion\accordion.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\accordion\accordion.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\alert\alert.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\alert\alert.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\buttons\buttons.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\carousel\carousel.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\carousel\carousel.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\collapse\collapse.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-day-view.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-month-view.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-navigation-select.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker-navigation.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\datepicker\datepicker.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\dropdown\dropdown.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\index.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\modal\modal-backdrop.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\modal\modal-window.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\modal\modal.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\pagination\pagination.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\pagination\pagination.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\popover\popover.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\popover\popover.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\progressbar\progressbar.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\progressbar\progressbar.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\rating\rating.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\rating\rating.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\tabset\tabset.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\tabset\tabset.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\timepicker\timepicker.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\timepicker\timepicker.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\tooltip\tooltip.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\tooltip\tooltip.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\typeahead\highlight.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\typeahead\typeahead-window.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\%40ng-bootstrap\ng-bootstrap\typeahead\typeahead.module.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\accordion\accordion.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\autocomplete\autocomplete.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\blockui\blockui.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\breadcrumb\breadcrumb.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\button\button.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\calendar\calendar.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\captcha\captcha.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\carousel\carousel.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\chart\chart.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\checkbox\checkbox.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\chips\chips.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\codehighlighter\codehighlighter.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\colorpicker\colorpicker.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\common\shared.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\confirmdialog\confirmdialog.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\contextmenu\contextmenu.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\datagrid\datagrid.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\datalist\datalist.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\datascroller\datascroller.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\datatable\datatable.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\defer\defer.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\dialog\dialog.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\dragdrop\dragdrop.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\dropdown\dropdown.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\editor\editor.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\fieldset\fieldset.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\fileupload\fileupload.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\galleria\galleria.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\gmap\gmap.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\growl\growl.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\inplace\inplace.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\inputmask\inputmask.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\inputswitch\inputswitch.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\inputtextarea\inputtextarea.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\inputtext\inputtext.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\lightbox\lightbox.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\listbox\listbox.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\megamenu\megamenu.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\menubar\menubar.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\menu\menu.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\messages\messages.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\multiselect\multiselect.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\orderlist\orderlist.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\organizationchart\organizationchart.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\overlaypanel\overlaypanel.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\paginator\paginator.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\panelmenu\panelmenu.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\panel\panel.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\password\password.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\picklist\picklist.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\progressbar\progressbar.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\radiobutton\radiobutton.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\rating\rating.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\schedule\schedule.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\selectbutton\selectbutton.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\slidemenu\slidemenu.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\slider\slider.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\spinner\spinner.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\splitbutton\splitbutton.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\steps\steps.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\tabmenu\tabmenu.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\tabview\tabview.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\terminal\terminal.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\tieredmenu\tieredmenu.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\togglebutton\togglebutton.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\toolbar\toolbar.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\tooltip\tooltip.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\treetable\treetable.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\tree\tree.ngfactory.ts" />
+    <TypeScriptCompile Include="aot\node_modules\primeng\components\tristatecheckbox\tristatecheckbox.ngfactory.ts" />
+    <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\app.component.ts" />
+    <TypeScriptCompile Include="app\file-download\file-download.component.ts" />
+    <TypeScriptCompile Include="app\file-download\file-download.service.ts" />
+    <TypeScriptCompile Include="app\file-model\file-model.ts" />
+    <TypeScriptCompile Include="app\file-upload\file-upload.component.ts" />
+    <TypeScriptCompile Include="app\file-upload\file-upload.service.ts" />
+    <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\message\message.service.ts" />
+    <TypeScriptCompile Include="app\paged-list\paged-list-model.ts" />
+    <TypeScriptCompile Include="app\pipes\datex.pipe.ts" />
+    <TypeScriptCompile Include="app\pipes\file-size.pipe.ts" />
+    <TypeScriptCompile Include="app\signalr\get-clock-time.ts" />
+    <TypeScriptCompile Include="app\signalr\signalR.service.ts" />
+    <TypeScriptCompile Include="app\signalr\upload-document-process.service.ts" />
+    <TypeScriptCompile Include="app\test\Test.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59167</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59167/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,10 @@
+P:\FileUploader\FileUploader.EF.Common\bin\Release\FileUploader.EF.Common.dll.config
+P:\FileUploader\FileUploader.EF.Common\bin\Release\FileUploader.EF.Common.dll
+P:\FileUploader\FileUploader.EF.Common\bin\Release\FileUploader.EF.Common.pdb
+P:\FileUploader\FileUploader.EF.Common\bin\Release\EntityFramework.dll
+P:\FileUploader\FileUploader.EF.Common\bin\Release\EntityFramework.SqlServer.dll
+P:\FileUploader\FileUploader.EF.Common\bin\Release\EntityFramework.xml
+P:\FileUploader\FileUploader.EF.Common\bin\Release\EntityFramework.SqlServer.xml
+P:\FileUploader\FileUploader.EF.Common\obj\Release\FileUploader.EF.Common.csprojResolveAssemblyReference.cache
+P:\FileUploader\FileUploader.EF.Common\obj\Release\FileUploader.EF.Common.dll
+P:\FileUploader\FileUploader.EF.Common\obj\Release\FileUploader.EF.Common.pdb
